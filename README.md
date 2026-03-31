@@ -36,10 +36,14 @@ README.md
 <script src="./vendor/index.global.js"></script>
 ```
 
+## Preview
+
+![Screenshot do exemplo](./public/screenshot.png)
+
 ## Documentação
 
-- Guia visual + screenshot: `HELP.md`
-- Documentação detalhada da API: `api.md`
+- Guia visual + screenshot: [HELP.md](./HELP.md)
+- Documentação detalhada da API: [api.md](./api.md)
 
 ## Observação
 
