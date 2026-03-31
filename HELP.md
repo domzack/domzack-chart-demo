@@ -25,3 +25,8 @@ Este arquivo mostra visualmente como ficou o exemplo completo em `public/index.h
 ## Como abrir
 
 Abra `public/index.html` diretamente no navegador.
+
+## Referências
+
+- Screenshot do exemplo: `public/screenshot.png`
+- Documentação detalhada da API: `api.md`
