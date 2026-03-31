@@ -5,6 +5,10 @@ Demo mínima da `domzack-chart-lib` contendo apenas o essencial para o usuário 
 - `public/index.html`
 - `public/css/styles.css`
 - `public/js/main.js`
+- `public/vendor/index.global.js`
+- `public/screenshot.png`
+- `HELP.md`
+- `api.md`
 - `README.md`
 
 ## Como usar
@@ -19,14 +23,23 @@ public/
   index.html
   css/styles.css
   js/main.js
+  vendor/index.global.js
+  screenshot.png
+HELP.md
+api.md
 README.md
 ```
 
-## CDN usado no HTML
+## Biblioteca usada no HTML
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/domzack/domzack-chart-lib@main/dist/index.global.js"></script>
+<script src="./vendor/index.global.js"></script>
 ```
+
+## Documentação
+
+- Guia visual + screenshot: `HELP.md`
+- Documentação detalhada da API: `api.md`
 
 ## Observação
 
