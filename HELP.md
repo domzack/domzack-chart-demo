@@ -28,5 +28,4 @@ Abra `public/index.html` diretamente no navegador.
 
 ## Referências
 
-- Screenshot do exemplo (arquivo): [public/screenshot.png](./public/screenshot.png)
 - Documentação detalhada da API: [api.md](./api.md)
