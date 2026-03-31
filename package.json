@@ -1,0 +1,10 @@
+{
+    "name": "domzack-chart-lib-local-test",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Ambiente local para testar domzack-chart-lib via arquivo global.",
+    "type": "module",
+    "scripts": {
+        "start": "node server.mjs"
+    }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste Local | domzack-chart-lib</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <div class="toolbar">
+        <button data-tf="1m">1m</button>
+        <button data-tf="5m">5m</button>
+        <button data-tf="15m">15m</button>
+        <button id="fit">Fit</button>
+        <button id="auto-follow">AutoFollow: ON</button>
+        <button id="auto-follow-mode">Mode: BAR</button>
+        <button id="offset-less">Offset -</button>
+        <button id="offset-more">Offset +</button>
+        <button id="new-candle">Realtime +1</button>
+        <button id="prepend">Backfill -1</button>
+        <div id="info">Clique no candle | Shift+arraste para selecionar intervalo</div>
+    </div>
+
+    <div id="chart"></div>
+
+    <div id="range-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+        <div class="modal">
+            <h3>Resumo do Período Selecionado</h3>
+            <p id="range-xz">X → Z: -</p>
+            <p id="range-count">Candles: -</p>
+            <p id="range-ohlcv">OHLCV: -</p>
+            <p id="range-volume">Volume acumulado: -</p>
+            <p id="range-variation">Variação (open→close): -</p>
+
+            <div class="mini-candle-wrap">
+                <canvas id="mini-candle" width="120" height="120"></canvas>
+                <div id="mini-candle-legend" class="mini-candle-legend">
+                    Candle agregado do período
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="copy-range-csv">Copiar OHLCV (CSV)</button>
+                <button id="close-range-modal">Fechar</button>
+            </div>
+
+            <pre id="range-preview">Selecione um período com Shift+clique em dois pontos.</pre>
+        </div>
+    </div>
+
+    <script src="/lib/index.global.js"></script>
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+# Repositório de Teste Local — domzack-chart-lib
+
+> Documentação principal da API: consulte `README.md` neste mesmo diretório.
+> Este arquivo (`README.me`) permanece como guia rápido de execução local.
+
+Este projeto serve para validar localmente o uso da biblioteca `domzack-chart-lib` no navegador, consumindo o arquivo global:
+
+- `../domzack-chart-lib/dist/index.global.js`
+
+## Estrutura
+
+- `public/index.html` — página de exemplo com gráfico, timeframe, update realtime e backfill.
+- `public/css/styles.css` — estilos da interface.
+- `public/js/main.js` — entrypoint público.
+- `src/js/main.js` — código-fonte da lógica da aplicação.
+- `server.mjs` — servidor HTTP local simples (sem dependências).
+- `package.json` — script `npm start`.
+
+## Pré-requisitos
+
+1. A biblioteca principal precisa estar buildada:
+
+```powershell
+Set-Location "C:\mygits\domzack-chart-lib"
+npm run build
+```
+
+2. Node.js instalado (para rodar `server.mjs`).
+
+## Como executar
+
+```powershell
+Set-Location "C:\mygits\test"
+npm start
+```
+
+Abra no navegador:
+
+- `http://localhost:5500/index.html`
+
+## O que este exemplo demonstra
+
+- Criação do chart via `window.DomzackChartLib.createChart`.
+- Carga inicial com `series.setData(...)`.
+- Troca de timeframe (`1m`, `5m`, `15m`) com `chart.setTimeframe(...)`.
+- Update de novo candle com `series.update(...)`.
+- Backfill histórico com `series.prependData(...)`.
+- Ajuste de viewport com `chart.timeScale().fitContent()`.
+- Auto-follow (`on/off`) e modo (`bar`/`tick`) com controles na toolbar.
+- Ajuste de offset à direita (`rightOffsetCandles`) via botões.
+- Seleção de candle e seleção de período (`Shift+click` e `Shift+arraste`) com modal resumo.
+- Logs de depuração no `console` para eventos de botões e seleção.
+
+## Observando logs de depuração
+
+Abra o DevTools do navegador (Console) e procure entradas no formato:
+
+- `[chart-ui][<timestamp>] button.timeframe.click ...`
+- `[chart-ui][<timestamp>] button.auto-follow.click ...`
+- `[chart-ui][<timestamp>] button.new-candle.click ...`
+- `[chart-ui][<timestamp>] chart.range-select ...`
+
+Esses logs ajudam a identificar travamentos de interação e verificar o estado atual (`timeframe`, `autoFollow`, `mode`, `rightOffsetCandles`).
+
+## Exemplo mínimo de uso da biblioteca
+
+```html
+<script src="../domzack-chart-lib/dist/index.global.js"></script>
+<script>
+  const { createChart } = window.DomzackChartLib;
+  const chart = createChart(document.getElementById("chart"), { timeframe: "1m" });
+  const series = chart.addCandlestickSeries();
+
+  series.setData([
+    { time: Date.now(), open: 10, high: 12, low: 9, close: 11, volume: 100 }
+  ]);
+</script>
+```
+
+## Observações
+
+- Se `index.global.js` não existir, rode novamente `npm run build` em `domzack-chart-lib`.
+- Com `autoFollow` ligado, updates realtime devem sempre levar a viewport ao candle mais recente.
+- A rota antiga `/example.html` aponta para o novo `/index.html`.
+- Esse repositório de teste não publica nada; ele só valida uso local da biblioteca.
