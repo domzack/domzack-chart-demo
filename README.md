@@ -2,6 +2,9 @@
 
 Repositório de demo/validação local da biblioteca [`domzack-chart-lib`](https://github.com/domzack/domzack-chart-lib).
 
+- **Lib:** https://github.com/domzack/domzack-chart-lib
+- **Demo:** https://github.com/domzack/domzack-chart-demo
+
 Aqui você encontra:
 - como importar a lib;
 - quais funções públicas existem;
