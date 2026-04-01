@@ -1,5 +1,7 @@
 ﻿# domzack-chart-demo
 
+![Screenshot do exemplo](./public/screenshot.png)
+
 Demo mínima da `domzack-chart-lib` contendo apenas o essencial para o usuário final:
 
 - `public/index.html`
@@ -35,10 +37,6 @@ README.md
 ```html
 <script src="./vendor/index.global.js"></script>
 ```
-
-## Preview
-
-![Screenshot do exemplo](./public/screenshot.png)
 
 ## Documentação
 
